@@ -1,0 +1,62 @@
+﻿@model List<TblCuisine>
+@{
+   // ViewData["Title"] = "First";
+    Layout = null;
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/js/JavaScript1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="~/css/StyleSheet1.css" rel="stylesheet" />
+  
+
+</head>
+<body>
+   
+    <div>
+        <h2>Discover the best food & drinks in Bhubaneswar</h2>
+        <form action="Home/ResturantDetails" method="post">
+
+
+           
+            <input type="text" name="location" id="location" placeholder="Location" />
+
+
+            <input type="text" name="restName" id="restName" placeholder="enter resturant name" />
+
+
+
+            <select name="rating" id="rating">
+                <option value="0.0">rating</option>
+                <option value="3.0">3.0</option>
+                <option value="4.0">4.0</option>
+                <option value="5.0">5.0</option>
+                <option value="4.5">4.5</option>
+                <option value="3.5">3.5</option>
+                <option value="4.8">4.8</option>
+                <option value="4.9">4.9</option>
+                <option value="4.2">4.2</option>
+                <option value="3.9">3.9</option>
+                <option value="4.3">4.3</option>
+                <option value="4.1">4.1</option>
+                <option value="4.4">4.4</option>
+                <option value="4.7">4.7</option>
+            </select>
+            <select name="CusineId" id="CusineId">
+                <option value="0">Cuisine</option>
+                @foreach (TblCuisine val in Model)
+                {
+                    <option value="@val.CusineId">@val.CusineType</option>
+                }
+
+            </select>
+            <input type="text" name="dist" id="dist" placeholder="distance(in meters)" />
+            <input type="text" name="budget" id="budget" placeholder="budget(in rupees)" />
+
+            <button type="submit" value="submit" id="btnclick" onclick="">Search</button>
+
+
+        </form>
+    </div>
+</body>
+

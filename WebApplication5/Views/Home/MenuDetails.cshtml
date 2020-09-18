@@ -1,0 +1,52 @@
+﻿@model List<FoodMenu>
+
+@{ 
+    Layout = null;
+}
+<head>
+    <link href="~/css/StyleSheet2.css" rel="stylesheet" />
+
+</head>
+
+        <h4>Food Name</h4><span>Price</span><span>Units</span>
+        
+
+     
+@foreach (var item in Model)
+{
+   
+<form action="/Home/AddedToCart" method="post">
+    <table>
+        <tr>
+            <td>
+               
+                <input type="text" name="id" id="id" value="@ViewBag.id" hidden/>
+
+                <input type="text" name="foodname" id="foodname" value="@item.FoodName" readonly />
+                <input type="text" name="foodId" id="foodId" value="@item.FoodId" hidden />
+                <input type="text" name="price" id="price" value="@item.Price" readonly />
+
+                <input type="text" name="units" id="units" value="" />
+
+
+                <button type="submit" value="submit">Add</button>
+            </td>
+        </tr>
+      
+       
+     
+    </table>
+</form>
+
+}
+<form>
+    <table>
+        <tr>
+            <td>
+                <button type="submit" value="submit" formaction="/Home/CartDetails">View Cart</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+

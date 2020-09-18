@@ -1,0 +1,34 @@
+﻿@model List<FoodMenu>
+@{
+    ViewData["Title"] = "food";
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <script src="~/js/JavaScript.js"></script>
+
+</head>
+<h2>food</h2>
+@foreach(var item in Model)
+{
+<form action="Home/AddedToCart">
+    <input type="text" name="id" id="id" value="@ViewBag.id" />
+
+    <input type="text" name="foodname" id="foodname" value="@item.FoodName" />
+    <input type="text" name="foodId" id="foodId" value="@item.FoodId" />
+    <input type="text" name="price" id="price" value="@item.Price" />
+    <div class="quantity">
+
+        <button class="minus-btn" id="subs" type="button" name="button" value="-" onclick="subst()">
+        </button>
+        <input type="text" name="units" id="units" value="" />
+
+        <button class="plus-btn" id="plus" type="button" name="button" value="+" onclick="add()">
+        </button>
+
+    </div>
+    <button type="submit" value="submit">Add</button>
+</form>
+
+}
+

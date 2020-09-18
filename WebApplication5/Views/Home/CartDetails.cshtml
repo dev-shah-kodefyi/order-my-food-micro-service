@@ -1,0 +1,96 @@
+﻿@model IEnumerable<WebApplication5.Models.CartItem>
+
+@{
+    ViewData["Title"] = "CartDetails";
+}
+
+<h2>CartDetails</h2>
+@if (Model != null)
+{
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CartId)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.RestId)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.FoodId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FoodName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Units)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.PictureUrl)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.UserEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CartId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RestId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FoodId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.FoodName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Units)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.PictureUrl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>*@
+                <td>
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CartId })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+    
+    <tr>
+        <td>
+            <form action="Proceed">
+                <button type="submit" value="submit">Proceed</button>
+            </form>
+        </td>
+    </tr>
+
+
+
+</table>
+}
+

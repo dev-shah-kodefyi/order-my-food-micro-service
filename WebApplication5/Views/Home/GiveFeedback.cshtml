@@ -1,0 +1,55 @@
+﻿@model WebApplication5.Models.TblReview
+
+@{
+    ViewData["Title"] = "GiveFeedback";
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="/Save">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="RestId" class="control-label"></label>
+                <input asp-for="RestId" id="restid" name="restid" value="@ViewBag.id"class="form-control" hidden />
+                <span asp-validation-for="RestId" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="RevId" class="control-label"></label>
+                <input asp-for="RevId" class="form-control" />
+                <span asp-validation-for="RevId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" name="name" id="name" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" name="comments" id="comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" name="rating" id="rating"class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" name="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="YourOrders">Back to List</a>
+</div>
+

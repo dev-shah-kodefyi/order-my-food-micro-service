@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApplication5.Models.TblResturant>
+
+@{
+    ViewData["Title"] = "ResturantDetails";
+}
+
+<h2>ResturantDetails</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RestId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RestName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Budget)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RestId)
+            </td>*@
+            <td>
+
+                <a href="/Home/MenuDetails/@item.RestId">@Html.DisplayFor(modelItem => item.RestName)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Budget)
+            </td>
+         
+        </tr>
+}
+    </tbody>
+</table>
