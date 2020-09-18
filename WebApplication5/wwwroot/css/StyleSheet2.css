@@ -1,0 +1,9 @@
+﻿input {
+    padding: 12px;
+    border-radius: 4px;
+    border-color: white;
+}
+button {
+    padding: 12px;
+    background-color: forestgreen;
+}

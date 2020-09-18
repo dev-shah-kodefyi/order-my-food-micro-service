@@ -1,0 +1,40 @@
+﻿body {
+    // background-image: url('...\image1\food.jpg');
+    background-image: url('file:///C:\Users\vmadmin\source\repos\WebApplication5\wwwroot\image1\images.jpg');
+    background-color: cornflowerblue;
+    background-size: cover;
+}
+div{
+    text-align:center;
+    padding-top:200px;
+}
+form {
+    padding-left: 10px;
+    background-color: whitesmoke;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 4px;
+    opacity: 0.85;
+}
+input {
+   
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    
+    opacity: 0.85;
+  
+}
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    opacity: 0.85;
+}
+
+select {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    opacity: 0.85;
+}
